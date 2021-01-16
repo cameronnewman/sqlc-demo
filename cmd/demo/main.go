@@ -42,7 +42,7 @@ func main() {
 	}
 
 	// :TODO: break this into separate service
-	logger.Info("Running config SQL Migration")
+	logger.Info("Running SQL Migration")
 	if err := migrator.Migration(migrator.Options{
 		Enabled:   cfg.Migrations.Enabled,
 		Directory: cfg.Migrations.Directory,

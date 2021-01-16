@@ -1,0 +1,16 @@
+version: "1"
+packages:
+  - name: "store"
+    path: "internal/pkg/store"
+    queries: "./sql/queries/"
+    schema: "./sql/migrations/"
+    engine: "postgresql"
+    emit_json_tags: true
+    emit_prepared_queries: true
+    emit_interface: false
+    emit_exact_table_names: false
+overrides:
+  - go_type: "github.com/google/uuid.UUID"
+    db_type: "uuid"
+  - go_type: "github.com/shopspring/decimal.Decimal"
+    db_type: "pg_catalog.numeric"
